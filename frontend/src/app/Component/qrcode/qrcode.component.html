@@ -1,0 +1,611 @@
+<div class="cont">
+  <div class="content">
+    <div class="content1">
+      <div class="tags">
+        <li *ngFor="let x of tag">
+          <label for="{{x.tex}}">
+            <input type="radio" name="data" value="{{x.tex}}" [(ngModel)]="type" id="{{x.tex}}"><span>{{x.tex}}</span>
+          </label>
+        </li>
+      </div>
+
+
+
+      <div [ngSwitch]="type">
+        <div *ngSwitchCase="'website'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="site">Website</label>
+              <input type="text" placeholder="Website" [(ngModel)]="weblink" id="site">
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="web()">Next</button>
+            </div>
+
+
+
+          </div>
+
+        </div>
+        <div *ngSwitchCase="'app'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="site">App link</label>
+              <input type="text" placeholder="App" [(ngModel)]="Applink" id="site">
+
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="app()">Next</button>
+            </div>
+          </div>
+
+
+        </div>
+        <div *ngSwitchCase="'phono'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="site">Phono</label>
+              <input type="text" placeholder="Phono no" [(ngModel)]="Phnolink" id="site">
+
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="phono()">Next</button>
+            </div>
+
+          </div>
+
+
+        </div>
+        <div *ngSwitchCase="'email'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="site">Email</label>
+              <input type="email" placeholder="Email" [(ngModel)]="Email" id="site">
+
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="email()">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'personal_info'" class="data">
+          <div class="main">
+
+            <div class="in">
+              <label for="p1">First name</label>
+              <input type="text" placeholder="Firstname" [(ngModel)]="pfname" id="p1">
+            </div>
+            <div class="in">
+              <label for="p2">Last name <span>(Optional)</span></label>
+              <input type="text" placeholder="Lastname" [(ngModel)]="plname" id="p2">
+            </div>
+            <div class="in">
+              <label for="p3">Email</label>
+              <input type="email" placeholder="Email" [(ngModel)]="pemail" id="p3">
+            </div>
+            <div class="in">
+              <label for="p4">Phone number</label>
+              <input type="text" placeholder="Phone no" [(ngModel)]="ppno" id="p4">
+            </div>
+            <div class="in">
+              <label for="p5">Company <span>(Optional)</span></label>
+              <input type="text" placeholder="Company" [(ngModel)]="pcomp" id="p5">
+            </div>
+            <div class="in">
+              <label for="p10">Job</label>
+              <input type="text" placeholder="Job" [(ngModel)]="pjob" id="p10">
+            </div>
+            <div class="in">
+              <label for="p6">Street</label>
+              <input type="text" placeholder="Street" [(ngModel)]="pstreet" id="p6">
+            </div>
+            <div class="in">
+              <label for="">City</label>
+              <input type="text" placeholder="City" [(ngModel)]="pcity" id="p7">
+            </div>
+            <div class="in">
+              <label for="">State</label>
+              <input type="text" placeholder="State" [(ngModel)]="pstate" id="p8">
+            </div>
+            <div class="in">
+              <label for="p9">Country</label>
+              <select [(ngModel)]="pcontry">
+                <option value="none" selected>Country</option>
+                <option *ngFor="let x of country_list " value="{{x}}">{{x}}</option>
+
+              </select>
+              <!-- <input type="text" placeholder="country" [(ngModel)]="pcontry" id="p9"> -->
+            </div>
+            <div class="in">
+              <label for="p0">Website <span>(Optional)</span></label>
+              <input type="text" placeholder="Website" [(ngModel)]="pwebsite" id="p0">
+            </div>
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="perso()">Next</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- <div *ngSwitchCase="'image'" class="data">
+        <div class="main">
+          <div class="in">
+            <label for="site">Image</label>
+            <input type="file" [(ngModel)]="imglink" id="site" type="image/*">
+          </div>
+
+          <div class="pass">
+            <span>Want to add password</span>
+            <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+          </div>
+          <div *ngIf="x" class="in">
+            <label for="Password">Password</label>
+            <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+          </div>
+          <div>
+            <button type="submit" class="but" (click)="image()">Next</button>
+          </div>
+        </div>
+      </div> -->
+
+
+        <div *ngSwitchCase="'address'" class="data">
+          <div class="main">
+            <div class="in">
+              <p class="latlng">Send Current loaction lat and lng</p>
+              <button class="but" (click)="latLng()">next</button>
+            </div>
+            <div class="in">
+              <label for="p4">House no</label>
+              <input type="text" placeholder="House no or buliding no" [(ngModel)]="abuildno" id="p4">
+            </div>
+            <div class="in">
+              <label for="p6">Street</label>
+              <input type="text" placeholder="Street" [(ngModel)]="astreet" id="p6">
+            </div>
+            <div class="in">
+              <label for="">City</label>
+              <input type="text" placeholder="City" [(ngModel)]="acity" id="p7">
+            </div>
+            <div class="in">
+              <label for="p3">pincode</label>
+              <input type="text" placeholder="pincode" [(ngModel)]="apincode" id="p3">
+            </div>
+            <div class="in">
+              <label for="">State</label>
+              <input type="text" placeholder="State" [(ngModel)]="astate" id="p8">
+            </div>
+            <div class="in">
+              <label for="p9">Country</label>
+              <select [(ngModel)]="acontry">
+                <option value="none" selected>Country</option>
+                <option *ngFor="let x of country_list " value="{{x}}">{{x}}</option>
+              </select>
+              <!-- <input type="text" placeholder="country" [(ngModel)]="pcontry" id="p9"> -->
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="address()">Next</button>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        <div *ngSwitchCase="'message'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="site">Message</label>
+              <textarea placeholder="Message" [(ngModel)]="Message" id="site" cols="30" rows="5"></textarea>
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="message()">Next</button>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        <div *ngSwitchCase="'account_info'" class="data">
+          <div class="main">
+            <div class="in">
+              <label for="na">Account Holder Name</label>
+              <input type="text" placeholder="Name" [(ngModel)]="piname" id="na">
+
+            </div>
+            <div class="in">
+              <label for="ac">Account No</label>
+              <input type="text" placeholder="Account No" [(ngModel)]="piAcno" id="ac">
+
+            </div>
+            <div class="in">
+              <label for="ifc">IFSC</label>
+              <input type="text" placeholder="IFSC CODE" [(ngModel)]="pifcfsc" id="ifc">
+
+            </div>
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="accountinfo()">Next</button>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div *ngSwitchDefault class="data">
+          <div>
+            <div class="in">
+              <label for="na">title</label>
+              <input type="text" placeholder="title" [(ngModel)]="Otitle" id="na">
+
+            </div>
+            <div class="in">
+              <label for="ac">Data</label>
+              <input type="text" placeholder="Data" [(ngModel)]="Other" id="ac">
+            </div>
+
+            <div class="pass">
+              <span>Want to add password</span>
+              <mat-slide-toggle [(ngModel)]="x"></mat-slide-toggle>
+            </div>
+
+            <div *ngIf="x" class="in">
+              <label for="Password">Password</label>
+              <input type="password" placeholder="Password" id="password" [(ngModel)]="password">
+            </div>
+            <div>
+              <button type="submit" class="but" (click)="other()">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content2">
+      <div [ngClass]="class1" (click)="c1()">Geneneral</div>
+      <div [ngStyle]="{display:display1}" class="sub">
+        <div class="in">
+          <label for="sa">Shape</label>
+        <select [(ngModel)]="qrshape"  id="sa" (change)="change()">
+          <option value="square">Square</option>
+          <option value="circle">Circle</option>
+          </select>
+      </div>
+        <div class="in">
+            <label for="na">Image</label>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*" id="na">
+        </div>
+
+      </div>
+      <div [ngClass]="class2" (click)="c2()">frameOptions</div>
+      <div [ngStyle]="{display:display2}" class="sub">
+        <div class="in">
+          <label for="fn">Frame style</label>
+          <select [(ngModel)]="frameOptions.style" (change)="fram()">
+            <option value="none">None</option>
+            <option *ngFor="let x of framsryle"  value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+      </div>
+      <div [ngClass]="class3" (click)="c3()">dotsOptions</div>
+      <div [ngStyle]="{display:display3}" class="sub">
+        <div class="in">
+          <label for="fn">Dot type</label>
+          <select [(ngModel)]="qrdottype" (change)="change()">
+            <option *ngFor="let x of Dottype" value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+        <div class="in">
+          <label for="cl">Color</label>
+          <input type="color" [(ngModel)]="qrdotcolor" (change)="dotcolor()">
+        </div>
+        <div class="in">
+          <label>grident</label>
+          <div class="in">
+            <label for="liner"><span>Type</span></label>
+            <select [(ngModel)]="grident.type" (change)="change()" id="type">
+              <option value="linear">Linear</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="in">
+            <label for="rotation">Rotation</label>
+            <input type="number" [(ngModel)]="grident.rotation" (change)="change()" id="rotation">
+          </div>
+            <div class="in">
+              <label><span>Colors</span></label>
+              <div>
+              <input type="color" [(ngModel)]="grident.colorStops[0].color" (change)="change()">
+              <input type="color" [(ngModel)]="grident.colorStops[1].color" (change)="change()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div [ngClass]="class4" (click)="c4()">cornersSquareOptions</div>
+      <div [ngStyle]="{display:display4}" class="sub">
+        <div class="in">
+          <label for="fn">Corner square type</label>
+          <select [(ngModel)]="qrcsotype" (change)="change()">
+            <option *ngFor="let x of Costype" value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+        <div class="in">
+          <label for="cl">Color</label>
+          <input type="color" [(ngModel)]="qrcsocolor" (change)="csocolor()">
+        </div>
+        <div class="in">
+          <label>grident</label>
+          <div class="in">
+            <label for="liner"><span>Type</span></label>
+            <select [(ngModel)]="grident1.type" (change)="change()" id="type">
+              <option value="linear">Linear</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="in">
+            <label for="rotation">Rotation</label>
+            <input type="number" [(ngModel)]="grident1.rotation" (change)="change()" id="rotation">
+          </div>
+            <div class="in">
+              <label><span>Colors</span></label>
+              <div>
+              <input type="color" [(ngModel)]="grident1.colorStops[0].color" (change)="change()">
+              <input type="color" [(ngModel)]="grident1.colorStops[1].color" (change)="change()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div [ngClass]="class5" (click)="c5()">cornersDotOptions</div>
+      <div [ngStyle]="{display:display5}" class="sub">
+        <div class="in">
+          <label for="fn">Corner Dot type</label>
+          <select [(ngModel)]="qrcdotype" (change)="change()">
+            <option *ngFor="let x of Cdotype" value="{{x}}">{{x}}</option>
+          </select>
+        </div>
+        <div class="in">
+          <label for="cl">Color</label>
+          <input type="color" [(ngModel)]="qrcdocolor" (change)="cdocolor()">
+        </div>
+        <div class="in">
+          <label>grident</label>
+          <div class="in">
+            <label for="liner"><span>Type</span></label>
+            <select [(ngModel)]="grident2.type" (change)="change()" id="type">
+              <option value="linear">Linear</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="in">
+            <label for="rotation">Rotation</label>
+            <input type="number" [(ngModel)]="grident2.rotation" (change)="change()" id="rotation">
+          </div>
+            <div class="in">
+              <label><span>Colors</span></label>
+              <div>
+              <input type="color" [(ngModel)]="grident2.colorStops[0].color" (change)="change()">
+              <input type="color" [(ngModel)]="grident2.colorStops[1].color" (change)="change()">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [ngClass]="class6" (click)="c6()">backgroundOptions</div>
+      <div [ngStyle]="{display:display6}" class="sub">
+        <div class="in">
+          <label for="fn">Background rounded</label>
+          <input type="number" [(ngModel)]="qrbgtype" (change)="change()" id="fn" >
+        </div>
+        <div class="in">
+          <label for="cl">Color</label>
+          <input type="color" [(ngModel)]="qrbgcolor" (change)="bgcolor()">
+        </div>
+        <div class="in">
+          <label>grident</label>
+          <div class="in">
+            <label for="liner"><span>Type</span></label>
+            <select [(ngModel)]="grident3.type" (change)="change()" id="type">
+              <option value="linear">Linear</option>
+              <option value="radial">Radial</option>
+            </select>
+          </div>
+          <div class="in">
+            <label for="rotation">Rotation</label>
+            <input type="number" [(ngModel)]="grident3.rotation" (change)="change()" id="rotation">
+          </div>
+            <div class="in">
+              <label><span>Colors</span></label>
+              <div>
+              <input type="color" [(ngModel)]="grident3.colorStops[0].color" (change)="change()">
+              <input type="color" [(ngModel)]="grident3.colorStops[1].color" (change)="change()">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="qr">
+    <div>
+      <ngx-qrcode-styling [config]="config" #qrcode class="qrg"
+      ></ngx-qrcode-styling>
+      <div *ngIf="Qrdata">
+        <button (click)="dow(qrcode)" download="IR_QR-code" class="but do" >Download</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <label for="website">
+        <input type="radio" name="data" value="web" [(ngModel)]="type" id="website"><span>Website</span>
+      </label>
+      <label for="app">
+        <input type="radio" name="data" value="app" [(ngModel)]="type" id="app" checked><span>App</span>
+      </label>
+      <label for="phono">
+        <input type="radio" name="data" value="phono" [(ngModel)]="type" id="phono"><span>Phono</span>
+      </label>
+      <label for="email">
+        <input type="radio" name="data" value="email" [(ngModel)]="type" id="email"><span>Email</span>
+      </label>
+      <label for="personalinfo">
+        <input type="radio" name="data" value="personalinfo" [(ngModel)]="type"
+          id="personalinfo"><span>personal_Info</span>
+      </label>
+      <label for="image">
+        <input type="radio" name="data" value="img" [(ngModel)]="type" id="image"><span>Image</span>
+      </label>
+      <label for="address">
+        <input type="radio" name="data" value="address" [(ngModel)]="type" id="address"><span>Address</span>
+      </label>
+      <label for="message">
+        <input type="radio" name="data" value="message" [(ngModel)]="type" id="message"><span>Message</span>
+      </label>
+      <label for="acinfo">
+        <input type="radio" name="data" value="acinfo" [(ngModel)]="type" id="acinfo"><span>Account info</span>
+      </label>
+      <label for="other">
+        <input type="radio" name="data" value="other" [(ngModel)]="type" id="other"><span>Other</span>
+      </label> -->

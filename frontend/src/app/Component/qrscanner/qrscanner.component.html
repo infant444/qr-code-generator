@@ -1,0 +1,16 @@
+<div class="scan">
+<ngx-scanner-qrcode #action="scanner" class="x" ></ngx-scanner-qrcode>
+<div>
+  <h1>Start To Scan</h1>
+</div>
+</div>
+<!-- <button (click)="sg()">adjn</button> -->
+
+
+<p *ngIf="action">{{value}}</p>
+<p *ngIf="action.isLoading">⌛ Loading...</p>
+
+<!-- start -->
+
+<button (click)="press()" class="but">{{butval}}</button>
+
