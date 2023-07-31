@@ -19,6 +19,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { LodingComponent } from './Component/loding/loding.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+
+
+import { SocialLoginModule,SocialAuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { SigninComponent } from './Component/signin/signin.component';
+import { GoogleComponent } from './Component/google/google.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +35,9 @@ import { ToastrModule } from 'ngx-toastr';
     QrcodeComponent,
     TextComponent,
     TagComponent,
+    LodingComponent,
+    SigninComponent,
+    GoogleComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,8 +55,32 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut:4000,
       positionClass:'toast-top-right',
     }),
+    ClipboardModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide:'SocialAuthServiceConfig',
+      useValue:{
+        autoLogin:false,
+        providers:[
+          {
+            id:GoogleLoginProvider.PROVIDER_ID,
+            provider:new GoogleLoginProvider('793559241455-pobvf4fh2fhg8vfs5qhhjeclleogu11h.apps.googleusercontent.com')
+          },
+          {
+            id:FacebookLoginProvider.PROVIDER_ID,
+            provider:new FacebookLoginProvider('989543382181381')
+          }
+
+        ],
+        onError: (err)=>{
+          console.error(err);
+        }
+      }as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

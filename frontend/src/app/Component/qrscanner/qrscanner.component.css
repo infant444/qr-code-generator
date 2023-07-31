@@ -1,6 +1,15 @@
+@font-face {
+  font-family: myfont;
+  src: url(../../../assets/font/Creatify.ttf);
+}
+@font-face {
+  font-family: butsty;
+  src: url(../../../assets/font/esthetique.otf);
+}
 .scan{
   position: relative;
 }
+
 .x{
   max-width: 700px;
   min-width: 300px;
@@ -19,6 +28,49 @@
 }
 
 .but{
-  position: relative;
+  position: absolute;
   z-index: 2;
+  right: 0;
+  left: 0;
+  width: 200px;
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: lawngreen;
+  font-family: butsty;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.scan-x{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.scan-x h1{
+  font-size: 5rem;
+  font-family: myfont;
+  text-align: center;
+  color: aqua;
+  cursor: pointer;
+}
+
+.value{
+  display: flex;
+}
+mat-icon{
+  cursor: pointer;
+}
+
+.value div{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width:523px) {
+
+.scan-x h1{
+  font-size: 3rem;
+}
 }

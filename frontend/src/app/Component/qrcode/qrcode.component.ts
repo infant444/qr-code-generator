@@ -154,10 +154,9 @@ export class QrcodeComponent implements OnInit {
   qrimage: string = '';
   frameOptions: any = {
     style: 'none',
-    width: 400,
-    height: 400,
-    x: 35,
-    y: 30
+    width: 300,
+    height: 300,
+
   }
 
 
@@ -596,8 +595,8 @@ export class QrcodeComponent implements OnInit {
   }
   Adddata() {
     this.qrcode.update(this.qrcode.config, {
-      width: 400,
-    height: 400,
+      width: 300,
+    height: 300,
     margin: 5,
       data: this.Qrdata,
       image: this.qrimage,

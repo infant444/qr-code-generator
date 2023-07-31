@@ -1,16 +1,22 @@
+<app-loding *ngIf="action.isLoading"></app-loding>
+
 <div class="scan">
-<ngx-scanner-qrcode #action="scanner" class="x" ></ngx-scanner-qrcode>
-<div>
-  <h1>Start To Scan</h1>
+  <ngx-scanner-qrcode #action="scanner" class="x"></ngx-scanner-qrcode>
+  <div class="scan-x" *ngIf="but">
+    <h1 (click)="press()">Tap To Scan</h1>
+  </div>
 </div>
+<div *ngIf="value" class="value">
+  <div>
+  <p *ngFor="let x of value">{{x}}
+    <a href="{{x}}" *ngIf="website">{{x}}</a>
+    <a href="tel:+919342199741"*ngIf="mobile">{{x}}</a>
+
+  </p>
+  </div>
+  <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose={{value}}" *ngIf="email">{{value}}</a>
+
+
+  <mat-icon (click)="copy()" [ngStyle]="{color:style}">{{copyvalue}}</mat-icon>
 </div>
-<!-- <button (click)="sg()">adjn</button> -->
-
-
-<p *ngIf="action">{{value}}</p>
-<p *ngIf="action.isLoading">⌛ Loading...</p>
-
-<!-- start -->
-
 <button (click)="press()" class="but">{{butval}}</button>
-
